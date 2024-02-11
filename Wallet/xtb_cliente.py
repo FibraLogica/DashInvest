@@ -37,12 +37,6 @@ class XTBClient(BrokerConnector):
 
     def login(self):
         response = self.send_command("login", {"userId": self.user_id, "password": self.password})
-        print("Resposta do Login:", response)
-        return response
-
-    def get_user_data(self):
-        response = self.send_command("getCurrentUserData", {})
-        print("Dados do Usuário Atual:", response)
         return response
 
     def send_command(self, command, arguments):
@@ -52,17 +46,14 @@ class XTBClient(BrokerConnector):
 
     def get_margin_level(self):
         response = self.send_command("getMarginLevel", {})
-        print("Dados da conta:", response)
         return response
     
     def get_current_user_data(self):
         response = self.send_command("getCurrentUserData", {})
-        print("Dados do Usuário Atual:", response)
         return response
     
     def get_current_user_symbols(self):
         response = self.send_command("getAllSymbols", {})
-        print("Os simbolos são:", response)
         return response
 
     def receive_response(self):
@@ -74,21 +65,4 @@ class XTBClient(BrokerConnector):
                 break
         return json.loads(response.decode('utf-8'))
 
-    def get_account_data(self):
-        # Implemente conforme necessário, dependendo dos dados disponíveis da XTB
-        raise NotImplementedError("This method needs to be implemented based on XTB's API.")
 
-# Opcional: se você tiver um ponto de entrada principal
-def main():
-    user_id = env('XTB_USER_ID')
-    password = env('XTB_PASSWORD')
-    client = XTBClient(user_id, password)
-    client.connect()
-    client.get_current_user_data()
-    login_response = client.login()
-    if login_response.get('status'):
-        client.get_user_data()
-    client.disconnect()
-
-if __name__ == "__main__":
-    main()

@@ -26,7 +26,6 @@ def carteira_view(request):
                     'corretora': 'Binance',
                     'tipo_ativo': 'Criptomoeda',
                 })
-    print('DEBUG')
     # # Parte da XTB
     # user_id = env('XTB_USER_ID')
     # password = env('XTB_PASSWORD')
