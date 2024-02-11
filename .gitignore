@@ -1,0 +1,64 @@
+# Arquivo .env que contém variáveis de ambiente
+.env
+
+# Bytecode compilado do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc
+
+# Pasta de arquivos estáticos coletados
+/static
+
+# Banco de dados SQLite (se estiver usando em algum momento para testes)
+*.sqlite3
+*.sqlite3-journal
+
+# Arquivos de log
+*.log
+
+# Diretório de mídia - Usado para arquivos carregados pelos usuários
+/media
+
+# Arquivos de configuração do IDE ou editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Diretório de ambientes virtuais
+venv/
+env/
+ENV/
+
+# Arquivos de cache do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de distribuição / pacotes
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Instalações do Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Arquivos de configuração local
+*.pot
+*.ini
+*.pyc
+*.pyo
+*.pyd
+.Python

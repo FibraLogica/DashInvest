@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <h2>Status da Conexão</h2>
+    <p>{{ message }}</p>
+    <h3>Detalhes das Moedas</h3>
+    {% if coins_info %}
+        <ul>
+            {% for coin in coins_info %}
+                <li>{{ coin.coin }}: Disponível = {{ coin.free }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não foram encontrados detalhes das moedas.</p>
+    {% endif %}
+</body>
+{% endblock %}

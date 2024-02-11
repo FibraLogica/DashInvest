@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            {% for noticia in noticias %}
+                <div class="col-md-4 mb-4">
+                    <div class="custom-card card h-100">
+                        <div class="card-body">
+                            <h5 class="custom-title card-title">{{ noticia.titulo }}</h5>
+                            <p class="custom-text card-text">{{ noticia.resumo|safe }}</p>
+                            <p class="custom-text card-text"><small class="text-muted">Publicado em: {{ noticia.publicado }}</small></p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ noticia.link }}" class="custom-button btn btn-primary" target="_blank">Leia Mais</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

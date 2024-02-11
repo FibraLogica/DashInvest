@@ -1,0 +1,13 @@
+version: '3'
+services:
+  django:
+    image: dashinvest
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      BINANCE_API_KEY: 'i6rRiM6mq2QEGNVUs5pO105fjJWGjLeOrWzIzmQBLqvWVjoKGEuP0AngFdU1dAHC'
+      BINANCE_API_SECRET: 'c9F5SWs252b69bF9Fnn97M7WBecsEGucdBXDMoGjVxtWNJ8JgCWlUVAVvbEtl0vh'

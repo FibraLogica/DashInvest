@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 custom-heading">Carteira de Investimentos</h2>
+    {% if carteira_data %}
+    <div class="table-responsive">
+        <h3>Criptomoedas</h3>
+        <table class="table table-hover custom-table">
+            <thead>
+                <tr>
+                    <th>Ativo</th>
+                    <th>Quantidade</th>
+                    <th>Valor de Mercado (USD)</th>
+                    <th>Valor Atual (EUR)</th>
+                    <th>Corretora</th>
+                    <th>Tipo de Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carteira_data %}
+                <tr>
+                    <td>{{ item.nome_do_ativo }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.valor_mercado | floatformat:2 }}</td>
+                    <td>{{ item.valor_atual | floatformat:2 }}</td>
+                    <td>{{ item.corretora }}</td>
+                    <td>{{ item.tipo_ativo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Ações</h3>
+        <table class="table table-hover custom-table">
+            <thead>
+                <tr>
+                    <th>Ativo</th>
+                    <th>Quantidade</th>
+                    <th>Preço Médio</th>
+                    <th>Valor Atual</th>
+                    <th>Lucro/Prejuízo</th>
+                    <th>Corretora</th>
+                    <th>Tipo de Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carteira_data %}
+                <tr>
+                    <td>{{ item.nome_do_ativo }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.preco_medio | floatformat:2 }}</td>
+                    <td>{{ item.valor_atual | floatformat:2 }}</td>
+                    <td>{{ item.lucro_prejuizo | floatformat:2 }}</td>
+                    <td>{{ item.corretora }}</td>
+                    <td>{{ item.tipo_ativo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>ETFs</h3>
+        <table class="table table-hover custom-table">
+            <thead>
+                <tr>
+                    <th>Ativo</th>
+                    <th>Quantidade</th>
+                    <th>Preço Médio</th>
+                    <th>Valor Atual</th>
+                    <th>Lucro/Prejuízo</th>
+                    <th>Corretora</th>
+                    <th>Tipo de Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carteira_data %}
+                <tr>
+                    <td>{{ item.nome_do_ativo }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.preco_medio | floatformat:2 }}</td>
+                    <td>{{ item.valor_atual | floatformat:2 }}</td>
+                    <td>{{ item.lucro_prejuizo | floatformat:2 }}</td>
+                    <td>{{ item.corretora }}</td>
+                    <td>{{ item.tipo_ativo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>REITs</h3>
+        <table class="table table-hover custom-table">
+            <thead>
+                <tr>
+                    <th>Ativo</th>
+                    <th>Quantidade</th>
+                    <th>Preço Médio</th>
+                    <th>Valor Atual</th>
+                    <th>Lucro/Prejuízo</th>
+                    <th>Corretora</th>
+                    <th>Tipo de Ativo</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carteira_data %}
+                <tr>
+                    <td>{{ item.nome_do_ativo }}</td>
+                    <td>{{ item.quantidade }}</td>
+                    <td>{{ item.preco_medio | floatformat:2 }}</td>
+                    <td>{{ item.valor_atual | floatformat:2 }}</td>
+                    <td>{{ item.lucro_prejuizo | floatformat:2 }}</td>
+                    <td>{{ item.corretora }}</td>
+                    <td>{{ item.tipo_ativo }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <p class="custom-no-data">Não há dados disponíveis para exibir.</p>
+    {% endif %}
+</div>
+{% endblock %}

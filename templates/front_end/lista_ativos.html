@@ -1,0 +1,12 @@
+<!-- back_end/templates/back_end/lista_ativos.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Lista de Ativos</h2>
+<ul>
+    {% for ativo in ativos %}
+    <li>{{ ativo.nome }}: {{ ativo.quantidade }} unidades, Preço Médio: {{ ativo.preco_medio }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

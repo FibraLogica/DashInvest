@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt" style="height: 100%;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Investimentos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Carregue o arquivo CSS externo -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        .navbar-nav .nav-link:focus {
+            outline: none;
+        }
+    </style>    
+
+</head>
+<body style="display: flex; flex-direction: column; height: 100%; margin: 0;">
+    <div id="page-container" style="flex: 1; display: flex; flex-direction: column;">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">Dashboard Investimentos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link active" href="{% url 'lista_ativos' %}">Dashboard <span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="{% url 'noticias_financeiras' %}">Notícias</a>
+                    <a class="nav-item nav-link" href="#">Gráficos</a>
+                    <a class="nav-item nav-link" href="{% url 'carteira_view' %}">Carteira</a>
+                    <a class="nav-item nav-link" href="#">Histórico</a>
+                    <!-- Outros itens de menu -->
+                </div>
+                <span class="navbar-text">
+                    Caixa: {{ balance }} EUR
+                </span>
+            </div>
+        </nav>
+
+        <div class="container mt-4" id="content-wrap" style="flex: 1;">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
